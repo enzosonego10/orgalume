@@ -10,3 +10,57 @@
 @media(max-width:960px){.brand{display:block}.sidebar nav{margin-top:30px}}
 @media(max-width:520px){.mobile-brand{display:inline;font-family:Manrope,sans-serif;font-size:15px;font-weight:800;letter-spacing:-.7px}.breadcrumb .mobile-brand span{padding:0;color:var(--accent)}.breadcrumb-space,.breadcrumb-divider,#view-label{display:none}.sidebar{padding-top:5px}.sidebar nav{margin-top:0}.search{width:151px}.page-heading{flex-wrap:wrap}.page-heading>div:first-child{min-width:0}.heading-actions{padding-top:0}.icon-button.row-delete{min-width:32px;min-height:36px}.task-check{width:28px;height:36px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* OrgaLume: neutral dark theme and transparent-looking logo treatment. */
+:root{--bg:#0e0f11;--panel:#17191c;--panel-hover:#202328;--line:#2d3137;--muted:#a0a5ad;--text:#f1f2f4;--green:#b8bdc6;--purple:#b8b1c1;--red:#f5a29b}
+body{background:var(--bg)}
+.sidebar{background:#0b0c0e;border-color:var(--line)}
+.brand{background:transparent;mix-blend-mode:normal}
+.brand-image{mix-blend-mode:screen;filter:contrast(1.03)}
+.workspace .avatar{background:#24272b;border-color:#434850;color:var(--green)}
+nav a:hover{background:#202328}
+nav a.active{background:#2a2d32}
+.nav-count{border-color:#454a52}
+.local-status>span{background:var(--green)}
+.topbar{border-color:var(--line)}
+.search{background:#17191c;border-color:var(--line)}
+kbd{border-color:#3d4148}
+.icon-button:hover{background:#282b30}
+.profile{background:#25282d;border-color:#464b54;color:#d7dbe0}
+.secondary{border-color:#454a52;background:#24272c}
+.secondary:hover{background:#30343a}
+.demo-notice{border-color:#383c43;background:#1a1d21;color:#c4c8cf}
+.demo-notice button{color:#d9dde2}
+.summary-banner{background:#202326;border-color:#3c4148}
+.sun-medallion{background:#2d3035;color:#d7dbe0}
+.summary-banner p{color:#c0c4ca}
+.progress-ring{background:conic-gradient(var(--green) var(--progress),#444950 0)}
+.progress-ring>span{background:#202326;color:#e2e4e8}
+.stat-icon{background:#282b30;color:var(--green)}
+.stat-icon.purple{background:#2d2e34}
+.text-link:hover,.item-title:hover{color:var(--accent)}
+.task-check input{border-color:#646a73}
+.task-check input:checked{background:var(--green);border-color:var(--green)}
+.area-dot{background:var(--green)}
+.badge.low{border-color:#4b515a;color:#c0c5cc;background:#292d33}
+.badge.normal{border-color:#454b54;color:#b9bec6;background:#24272c}
+.day-button.today{border-color:#555b64}
+.day-button:hover:not(.selected){background:#2a2e34}
+.event-body{border-color:var(--green)}
+.project-icon{background:#2d3035;color:var(--green)}
+.project-icon.Estudos{background:#303037}
+.progress-track{background:#34383e}
+.progress-fill{background:var(--green)}
+.note-card{background:#1d2024;border-color:#41464d}
+.note-card:before{background:#6b727d}
+.note-card .note-heading h2{color:#e2e4e8}
+.note-card svg{color:#c2c7ce}
+.note-content{color:#c0c4ca}
+.tabs{background:#17191c;border-color:var(--line)}
+.tabs button.active{background:#30343a;color:#e4e6e9}
+.filter-select{color:#d3d7dc}
+.empty-state>svg{color:#bfc4cc}
+dialog{background:#1a1d21;border-color:#444a52}
+dialog::backdrop{background:#07080abd}
+.field input,.field textarea,.field select{background:#111316;border-color:#454b54}
+.toast{background:#34383e;color:#eef0f2;border-color:#646b74}
