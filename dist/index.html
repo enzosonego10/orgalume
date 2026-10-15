@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111411">
+  <meta name="description" content="Seu dia, com espaço para o que importa. Organize tarefas, agenda, projetos e notas em um só lugar.">
+  <title>OrgaLume — Seu dia, mais organizado.</title>
+  <link rel="icon" href="orgalume-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="orgalume-logo.png">
+  <meta property="og:title" content="OrgaLume — Seu dia, mais organizado.">
+  <meta property="og:description" content="Tarefas, agenda, projetos e notas em um só lugar.">
+  <meta property="og:image" content="orgalume-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="vendor/lucide.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <aside class="sidebar">
+    <a class="brand" href="#hoje" aria-label="OrgaLume, início"><img class="brand-image" src="orgalume-logo.png" alt="OrgaLume — Seu dia, mais organizado." width="184" height="184"></a>
+    <div class="workspace"><span class="avatar"><i data-lucide="sprout"></i></span><div>Meu espaço<small>Um pouco mais de clareza.</small></div></div>
+    <p class="nav-label">SEU DIA</p>
+    <nav aria-label="Navegação principal" id="navigation">
+      <a href="#hoje" data-view="hoje"><i data-lucide="sun"></i><span>Hoje</span></a>
+      <a href="#tarefas" data-view="tarefas"><i data-lucide="circle-check"></i><span>Tarefas</span><span class="nav-count" id="task-count"></span></a>
+      <a href="#agenda" data-view="agenda"><i data-lucide="calendar-days"></i><span>Agenda</span></a>
+      <a href="#projetos" data-view="projetos"><i data-lucide="layers"></i><span>Projetos</span></a>
+      <a href="#notas" data-view="notas"><i data-lucide="notebook-pen"></i><span>Notas</span></a>
+    </nav>
+    <div class="sidebar-bottom"><div class="local-status"><span></span> Salvo neste navegador</div><button class="sidebar-settings" data-action="settings"><i data-lucide="settings-2"></i> Dados e preferências</button><div class="sidebar-footer">Menos abas.<br><span>Mais espaço para o seu dia.</span></div></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><div class="breadcrumb"><a class="mobile-brand" href="#hoje" aria-label="OrgaLume, início">Orga<span>Lume</span></a><span class="breadcrumb-space">Meu espaço</span> <span class="breadcrumb-divider">/</span> <strong id="view-label">Hoje</strong></div><div class="topbar-actions"><label class="search"><i data-lucide="search"></i><input id="search" type="search" placeholder="Buscar no seu espaço" aria-label="Buscar tarefas, compromissos, projetos e notas"><kbd>Ctrl K</kbd></label><button class="icon-button" data-action="settings" aria-label="Dados e preferências"><i data-lucide="sliders-horizontal"></i></button><span class="profile" aria-label="Espaço pessoal"><i data-lucide="user-round"></i></span></div></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="page-footer"><span>Seu dia, mais organizado.</span><span>OrgaLume <span class="footer-dot">●</span> versão 1.0</span></footer>
+  </div>
+  <dialog id="editor"><form id="entry-form"><div class="modal-heading"><div><p class="eyebrow">SEU ESPAÇO, DO SEU JEITO</p><h2 id="modal-title">Nova tarefa</h2></div><button type="button" class="icon-button" data-action="close-modal" aria-label="Fechar formulário"><i data-lucide="x"></i></button></div><div id="form-fields"></div><div class="modal-actions"><button type="button" class="button ghost" data-action="close-modal">Cancelar</button><button type="submit" class="button primary">Salvar</button></div></form></dialog>
+  <dialog id="settings"><div class="modal-heading"><div><p class="eyebrow">DADOS E PREFERÊNCIAS</p><h2>Seu espaço é seu.</h2></div><button class="icon-button" data-action="close-settings" aria-label="Fechar preferências"><i data-lucide="x"></i></button></div><p class="muted">Os dados ficam neste navegador. Eles não são sincronizados entre dispositivos. Exporte um backup para guardá-los.</p><div class="settings-row"><div><strong>Guardar uma cópia</strong><p>Baixe suas tarefas, agenda, projetos e notas em JSON.</p></div><button class="button secondary" data-action="export"><i data-lucide="download"></i> Exportar</button></div><div class="settings-row"><div><strong>Restaurar um backup</strong><p>Substitui os dados atuais após sua confirmação.</p></div><button class="button secondary" data-action="import"><i data-lucide="upload"></i> Importar</button></div><div class="integration-note"><i data-lucide="unplug"></i><div><strong>Integrações em uma próxima versão</strong><p>Google Calendar, Gmail e Drive ainda não estão conectados. Nesta versão, você cadastra seus compromissos e tarefas.</p></div></div><div class="settings-row"><div><strong>Começar do zero</strong><p>Apaga os itens deste navegador. Exporte antes se quiser guardar.</p></div><button class="button danger" data-action="reset">Limpar dados</button></div></dialog>
+  <dialog id="confirmation"><form method="dialog"><h2 id="confirm-title">Confirmar ação</h2><p id="confirm-message" class="muted"></p><div class="modal-actions"><button class="button ghost" value="cancel" autofocus>Cancelar</button><button class="button primary" id="confirm-button" value="confirm">Confirmar</button></div></form></dialog>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
